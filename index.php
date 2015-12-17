@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-  <?php get_template_part('sections/home/section-home-example'); ?>
+  <h1 class="font-h color-beta">The Test is Working</h1>
 
 <?php get_footer(); ?>

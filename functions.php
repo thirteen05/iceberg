@@ -1,19 +1,21 @@
 <?php
 
-// Register Custom Navigation Walker
+// Register Bootstrap Navigation Walker
+
 require_once('wp_bootstrap_navwalker.php');
 
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'THEMENAME' ),
 ) );
 
+//Enqueue Stylesheet for Custom WordPress Login 
 
-function enqueue_home_animation() {
-  wp_enqueue_script( 'script-name', get_template_directory_uri() . '/animate/1305-Main_edge.js', array(), '1.0.0', true );
+add_action('init', 'enqueue_custom_login_css');
+
+function enqueue_custom_login_css(){
+  
+  wp_enqueue_style('custom-admin-stylesheet', get_template_directory_uri().'/css/custom-wp-admin.css');
+  
 }
-
-add_action( 'wp_enqueue_scripts', 'enqueue_home_animation' );
-
-
 
 ?>
